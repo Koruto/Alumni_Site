@@ -25,10 +25,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth();
-const email = document.querySelector('.email_ID').value;
-const password = document.querySelector('.pass_ID').value;
+console.log(auth);
 
 function createAccount() {
+  const email = document.querySelector('.email_ID__cre').value;
+  const password = document.querySelector('.pass_ID__cre').value;
+
+  console.log(email);
+  console.log(password);
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
@@ -47,6 +51,11 @@ function createAccount() {
 }
 
 function logIN() {
+  const email = document.querySelector('.email_ID__log').value;
+  const password = document.querySelector('.pass_ID__log').value;
+
+  console.log(email);
+  console.log(password);
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
