@@ -6,6 +6,7 @@ import {
   signInWithPopup,
   signOut,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,8 +25,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth();
-const email = document.getElementById('email_ID').value;
-const password = document.getElementById('pass_ID').value;
+const email = document.querySelector('.email_ID').value;
+const password = document.querySelector('.pass_ID').value;
 
 function createAccount() {
   createUserWithEmailAndPassword(auth, email, password)
@@ -45,6 +46,24 @@ function createAccount() {
     });
 }
 
+function logIN() {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      console.log(user);
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+    });
+}
+
 document
   .querySelector('.btn__createAccount')
   .addEventListener('click', createAccount);
+
+document.querySelector('.btn__logIn').addEventListener('click', logIN);
