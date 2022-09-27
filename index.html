@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIT Alumni Site</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="/js/dom.js"></script>
+    <script type="module" src="/js/firebase_config.js"></script>
+    <script type="module" src="/js/firebase_login.js"></script>
+    <script type="module" src="/js/firebase_chat.js"></script>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Features</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Operations</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Testimonials</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal" href="#"
+              >Open account</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        <input
+          type="radio"
+          id="createAccount"
+          name="type"
+          value="createAccount"
+        />
+        <label for="createAccount">createAccount</label><br />
+        <input
+          type="radio"
+          id="logIn"
+          name="type"
+          value="logIn"
+          checked="true"
+        />
+        <label for="logIn">logIn</label><br />
+      </h2>
+      <form class="modal__form">
+        <label>Email</label>
+        <input type="email" class="email_ID" />
+        <label>Password</label>
+        <input type="password" class="pass_ID" />
+
+        <button class="btn btn__enter" type="submit">Enter &rarr;</button>
+        <button class="btn btn__ms">LogIn through Microsoft</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

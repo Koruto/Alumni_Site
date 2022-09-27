@@ -79,7 +79,7 @@ const db = getFirestore(app);
 // await setDoc(newCityRef, { name: 'Pikachu' });
 
 // const username = prompt('Please Tell Us Your Name');
-document.getElementById('message-form').addEventListener('submit', sendMessage);
+// document.getElementById('message-form').addEventListener('submit', sendMessage);
 
 function sendMessage(e) {
   e.preventDefault();
@@ -114,13 +114,13 @@ function sendMessage(e) {
 //   document.getElementById('messages').innerHTML += message;
 // });
 
-const unsub = onSnapshot(doc(db, username, 'test'), (doc) => {
-  //   console.log('Current data: ', doc.data());
-  const messages = doc.data();
-  // ! It calls twice due to timestamp addition
-  const message = `<li class=${
-    username === messages?.username ? 'sent' : 'receive'
-  }><span>${messages.username}: </span>${messages.message}</li>`;
-  // append the message on the page
-  document.getElementById('messages').innerHTML += message;
-});
+// const unsub = onSnapshot(doc(db, username, 'test'), (doc) => {
+//   //   console.log('Current data: ', doc.data());
+//   const messages = doc.data();
+//   // ! It calls twice due to timestamp addition
+//   const message = `<li class=${
+//     username === messages?.username ? 'sent' : 'receive'
+//   }><span>${messages.username}: </span>${messages.message}</li>`;
+//   // append the message on the page
+//   document.getElementById('messages').innerHTML += message;
+// });
