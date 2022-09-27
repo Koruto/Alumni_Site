@@ -28,7 +28,7 @@ function createAccount(email, password) {
       console.log(user);
       variables.modal.classList.add('hidden');
       variables.overlay.classList.add('hidden');
-      window.open('../common/chat.html', '_self');
+      window.open('common/chat.html', '_self');
       // ...
     })
     .catch((error) => {
@@ -52,7 +52,7 @@ function logIN(email, password) {
       console.log(user);
       variables.modal.classList.add('hidden');
       variables.overlay.classList.add('hidden');
-      window.open('../common/chat.html', '_self');
+      window.open('common/chat.html', '_self');
       // ..
     })
     .catch((error) => {
@@ -78,13 +78,13 @@ function signUP(e) {
       // IdP data available in result.additionalUserInfo.profile.
       console.log(result.additionalUserInfo.profile);
       // Get the OAuth access token and ID Token
+      window.open('common/chat.html', '_self');
       const credential = OAuthProvider.credentialFromResult(result);
       const accessToken = credential.accessToken;
       const idToken = credential.idToken;
       console.log(credential);
       console.log(accessToken);
       console.log(idToken);
-      window.open('../common/chat.html', '_self');
     })
     .catch((error) => {
       console.log(error);
