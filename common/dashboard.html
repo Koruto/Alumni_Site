@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Box</title>
+    <script type="module" src="../js/firebase_config.js"></script>
+    <script type="module" src="../js/firebase_chat.js"></script>
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <h2>Firebase RealTime Chat</h2>
+        <ul class="nav__links">
+          <li>
+            <div class="search-container">
+              <form action="/action_page.php">
+                <input
+                  type="text"
+                  placeholder="Search for something.."
+                  name="search"
+                />
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </div>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Home</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Chat</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Post Recruitment</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="section__left">
+        <ul class="left__links">
+          <li class="left__item">
+            <a href="#" class="left__link">Feed</a>
+          </li>
+          <li class="left__item"><a href="#" class="left__link">Friends</a></li>
+          <li class="left__item">
+            <a href="#" class="left__link">Messages</a>
+          </li>
+          <li class="left__item"><a href="#" class="left__link">Hire</a></li>
+          <li class="left__item">
+            <a href="#" class="left__link">Sign Out</a>
+          </li>
+        </ul>
+      </section>
+      <section class="section__center">
+        <div class="center__post">
+          <img src="" alt="" class="post__profile" />
+          <form action="/action_page.php">
+            <input
+              type="text"
+              placeholder="Search for something.."
+              name="search"
+            />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+          <form id="upload__form">
+            <input class="upload__file" type="file" />
+            <button class="btn btn__post">Post</button>
+          </form>
+        </div>
+        <div class="post post__1">
+          <div class="post__user">
+            <img src="" alt="" />
+            Name: Place:
+          </div>
+          <img src="" alt="" />
+          <div class="post__like"></div>
+        </div>
+        <div class="post post__2">
+          <div class="post__user">
+            <img src="" alt="" />
+            Name: Place:
+          </div>
+          <img src="" alt="" />
+          <div class="post__like"></div>
+        </div>
+        <div class="post post__3">
+          <div class="post__user">
+            <img src="" alt="" />
+            Name: Place:
+          </div>
+          <img src="" alt="" />
+          <div class="post__like"></div>
+        </div>
+        <div class="post post__4">
+          <div class="post__user">
+            <img src="" alt="" />
+            Name: Place:
+          </div>
+          <img src="" alt="" />
+          <div class="post__like"></div>
+        </div>
+      </section>
+      <section class="section__right">
+        <form action="/action_page.php">
+          <input
+            type="text"
+            placeholder="Search for something.."
+            name="search"
+          />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+
+        <h3 class="right__friend">Friends</h3>
+        <ul class="friendlist">
+          <li class="friend">
+            <img src="" alt="" />
+            Friend 1
+          </li>
+          <li class="friend">
+            <img src="" alt="" />
+            Friend 1
+          </li>
+          <li class="friend">
+            <img src="" alt="" />
+            Friend 1
+          </li>
+          <li class="friend">
+            <img src="" alt="" />
+            Friend 1
+          </li>
+        </ul>
+        <img id="myImg" src="" alt="" />
+      </section>
+    </main>
+
+    <div id="chat">
+      <!-- messages will display here -->
+      <ul id="messages"></ul>
+
+      <!-- form to send message -->
+    </div>
+
+    <script type="module" src="../js/firebase_upload.js"></script>
+  </body>
+</html>

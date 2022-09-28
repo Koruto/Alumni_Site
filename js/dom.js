@@ -3,4 +3,5 @@ export const variables = {
   overlay: document.querySelector('.overlay'),
   btn__ms: document.querySelector('.btn__ms'),
   btn__enter: document.querySelector('.btn__enter'),
+  upload__file: document.querySelector('.upload__file'),
 };
