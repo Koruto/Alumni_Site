@@ -40,7 +40,18 @@
     <div class="modal hidden">
       <button class="btn--close-modal">&times;</button>
       <h2 class="modal__header">
-        <input
+        <div class="switch-field">
+          <input
+            type="radio"
+            id="createAccount"
+            name="switch-one"
+            value="yes"
+          />
+          <label for="createAccount">createAccount</label>
+          <input type="radio" id="logIn" name="switch-one" value="no" checked />
+          <label for="logIn">Log In</label>
+        </div>
+        <!-- <input
           type="radio"
           id="createAccount"
           name="type"
@@ -54,7 +65,7 @@
           value="logIn"
           checked="true"
         />
-        <label for="logIn">logIn</label><br />
+        <label for="logIn">logIn</label><br /> -->
       </h2>
       <form class="modal__form">
         <label>Email</label>

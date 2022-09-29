@@ -52,7 +52,7 @@ function logIN(email, password) {
       console.log(user);
       variables.modal.classList.add('hidden');
       variables.overlay.classList.add('hidden');
-      window.open('common/dashboard.html', '_self');
+      // window.open('common/dashboard.html', '_self');
       // ..
     })
     .catch((error) => {

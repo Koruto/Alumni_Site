@@ -17,7 +17,7 @@ fb_func.connectFunctionsEmulator(functions, 'localhost', 5500);
 // Storage
 const storage = fb_store.getStorage(app);
 
-function uploadImage(e) {
+export function uploadImage(e) {
   const file = e.target.files[0];
   console.log(file);
 
@@ -43,4 +43,4 @@ function uploadImage(e) {
     });
 }
 
-variables.upload__file.addEventListener('change', uploadImage);
+// variables.upload__file.addEventListener('change', uploadImage);
