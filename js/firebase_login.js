@@ -2,6 +2,7 @@
 import * as fb_app from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';
 import * as fb_auth from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
 import * as fb_func from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-functions.js';
+import * as fb_fstore from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 import { firebaseConfig } from './firebase_config.js';
@@ -16,30 +17,7 @@ fb_func.connectFunctionsEmulator(functions, 'localhost', 5500);
 // Authentication
 
 const auth = fb_auth.getAuth();
-
-function createAccount(email, password) {
-  console.log(email);
-  console.log(password);
-  fb_auth
-    .createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      console.log(user);
-      variables.modal.classList.add('hidden');
-      variables.overlay.classList.add('hidden');
-      window.open('common/dashboard.html', '_self');
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
-
-      // ..
-    });
-}
+const db = fb_fstore.getFirestore(app);
 
 function logIN(email, password) {
   console.log(email);
@@ -50,9 +28,14 @@ function logIN(email, password) {
       // Signed in
       const user = userCredential.user;
       console.log(user);
-      variables.modal.classList.add('hidden');
-      variables.overlay.classList.add('hidden');
-      // window.open('common/dashboard.html', '_self');
+      const userRef = fb_fstore.doc(db, 'users', 'currentUser');
+      fb_fstore.setDoc(userRef, { user_UID: auth.currentUser.uid }).then(() => {
+        console.log('Added currentUser');
+        console.log(auth.currentUser);
+        variables.modal.classList.add('hidden');
+        variables.overlay.classList.add('hidden');
+        window.open('common/dashboard.html', '_self');
+      });
       // ..
     })
     .catch((error) => {
@@ -92,19 +75,6 @@ function signUP(e) {
     });
 }
 
-function signOUT() {
-  fb_auth
-    .signOut(auth)
-    .then(() => {
-      console.log('Logged Out');
-      // Sign-out successful.
-    })
-    .catch((error) => {
-      // An error happened.
-      console.log(error);
-    });
-}
-
 variables.btn__ms.addEventListener('click', signUP);
 
 variables.btn__enter.addEventListener('click', function (e) {
@@ -112,9 +82,7 @@ variables.btn__enter.addEventListener('click', function (e) {
   const email = document.querySelector('.email_ID').value;
   const password = document.querySelector('.pass_ID').value;
 
-  if (document.getElementById('createAccount').checked) {
-    createAccount(email, password);
-  } else logIN(email, password);
+  logIN(email, password);
 });
 
 // document.querySelector('.logOut').addEventListener('click', signOUT);

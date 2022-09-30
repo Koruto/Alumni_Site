@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script type="module" src="../js/dom.js"></script>
+    <script type="module" src="../js/firebase_config.js"></script>
+    <script type="module" src="../js/firebase_chat.js"></script>
+    <script type="module" src="../js/function.js"></script>
+    <link rel="stylesheet" href="../css/message.css" />
+    <link rel="stylesheet" href="../css/loader.css" />
+  </head>
+  <body>
+    <div class="fullpage-loader">
+      <div class="fullpage-loader__logo">
+        <!-- this img tag pointing to an external image is here for an example of what not to do, read the page to understand why to use a base64 image -->
+        <!-- 		<img src="https://cdn.shopify.com/s/files/1/0497/3073/files/logosmall_400x.png?v=1539650409" /> -->
+        <!-- <img
+          src="https://thumbs.dreamstime.com/b/hawaii-calligraphic-lettering-stylish-text-white-background-193694855.jpg"
+        /> -->
+        <h1>Page Loading...</h1>
+      </div>
+    </div>
+    <header>
+      <nav class="nav sticky">
+        <h2>AIT Alumnus Site</h2>
+        <ul class="nav__links">
+          <li class="nav__item">
+            <h1 class="nav__link user__name" href="#">User Name</h1>
+            <figure class="avatar-wrapper">
+              <img
+                src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460"
+                class="avatar"
+                alt="Post avatar"
+              />
+            </figure>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="section__left">
+        <ul class="left__links">
+          <li class="left__item">
+            <a href="dashboard.html" class="left__link">Feed</a>
+          </li>
+          <li class="left__item"><a href="#" class="left__link">Friends</a></li>
+          <li class="left__item">
+            <a href="#" class="left__link">Messages</a>
+          </li>
+          <li class="left__item">
+            <a href="hire.html" class="left__link">Hire</a>
+          </li>
+          <li class="left__item">
+            <a href="#" class="left__link sign__out">Sign Out</a>
+          </li>
+        </ul>
+      </section>
+      <section class="section__right">
+        <section class="chat__screen">
+          <div class="people_chat">
+            <div class="search-container">
+              <form action="">
+                <input
+                  type="text"
+                  placeholder="Search for something.."
+                  name="search"
+                  class="search__bar"
+                />
+                <button type="submit" class="search__btn">
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+            </div>
+            <ul class="user__friend">
+              <li class="user user__1">
+                <figure class="avatar-wrapper">
+                  <img
+                    src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460"
+                    class="avatar"
+                    alt="Post avatar"
+                  />
+                </figure>
+                <span class="txt_msg">Text Message 1</span>
+              </li>
+              <li class="user user__2">
+                <a href="#" class="left__link">Friend 2</a>
+              </li>
+              <li class="user user__3">
+                <a href="#" class="left__link">Friend 3</a>
+              </li>
+              <li class="user user__4">
+                <a href="#" class="left__link">Friend 4</a>
+              </li>
+            </ul>
+          </div>
+          <div class="current_chat">
+            <div class="chat__user">
+              <figure class="avatar-wrapper">
+                <img
+                  src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460"
+                  class="avatar"
+                  alt="Post avatar"
+                />
+              </figure>
+              <div class="content">
+                <h3>Sabarinathan Masilamani</h3>
+                <p class="title">Alumni</p>
+              </div>
+            </div>
+            <div class="messages__box">
+              <ul class="messages">
+                <li class="message message__1">
+                  <figure class="avatar-wrapper">
+                    <img
+                      src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460"
+                      class="avatar"
+                      alt="Post avatar"
+                    />
+                  </figure>
+                  <span class="txt_msg">Text Message 1</span>
+                </li>
+              </ul>
+            </div>
+            <div class="chat__send">
+              <input
+                type="text"
+                id="msg__value"
+                placeholder="Type something here.."
+              />
+              <button class="send__msg">
+                <i class="fa fa-send fa-2x"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div id="chat">
+      <!-- messages will display here -->
+      <ul id="messages"></ul>
+
+      <!-- form to send message -->
+    </div>
+
+    <script type="module" src="../js/message.js"></script>
+  </body>
+</html>

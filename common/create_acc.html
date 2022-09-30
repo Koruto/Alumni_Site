@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../css/create_acc.css" />
   </head>
   <body>
-    <form action="" class="createaccount__form">
+    <!-- <form action="" class="createaccount__form">
       <label for="name">Name</label>
       <input type="text" id="name" /><br />
       <label for="email_ID">Email</label>
@@ -34,7 +34,49 @@
       <label for="profileImg">Profile Photo</label>
       <input type="file" id="profileImg" /><br /><br />
 
-      <button class="btn btn__enter" type="submit">Enter &rarr;</button>
+      <button class="btn btn__enter" type="submit">Enter &rarr;</button> -->
+
+      <div id="main" class="main-container">
+        <div class="box">
+          <h2>Create Account</h2>
+          <form class="createaccount__form">
+            <div class="input-box">
+              <input id="name" type="text" name="" required="" />
+              <label>Name</label>
+            </div>
+            <div class="input-box">
+              <input id="email_ID" type="email" name="" required="" />
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <input id="pass_ID" type="password" name="" required="" />
+              <label>Password</label>
+            </div>
+            <div class="radio-box">
+              <label>Alumni?</label>
+              <label for="alumni">Yes</label>
+              <input type="radio" name="alumni" value="Yes" id="alumni" />
+              <label>No</label>
+              <input type="radio" name="alumni" value="No" id="student"/><br />
+            </div>
+            <div class="file-box">
+              <label for="profileImg">Profile Photo</label>
+              <input type="file" id="profileImg" /><br /><br />
+            </div>
+            <input
+              id="submit"
+              type="submit"
+              name=""
+              class="btn btn__enter"
+              value="Submit"
+            />
+          </form>
+          <p><a href="#">Lost your password?</a></p>
+          <p><a href="#">Register</a></p>
+        </div>
+      </div>
+
+      <div id="logged-in"></div>
     </form>
   </body>
 </html>
