@@ -69,9 +69,9 @@ function signUP(e) {
         fb_fstore.setDoc(cityRef, {
           name: result.user.displayName,
           email: result.user.email,
-          password: password,
+          password: password || 'user1234',
           photoURL: downloadURL || '../img/user.png',
-          alumni: alumniValue,
+          alumni: alumniValue || true,
         });
         console.log('Added currentUser');
         console.log(auth.currentUser);
