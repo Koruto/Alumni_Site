@@ -58,25 +58,25 @@ function signUP(e) {
       console.log(result);
       // User is signed in.
       // IdP data available in result.additionalUserInfo.profile.
-      console.log(result.additionalUserInfo.profile);
+
       // Get the OAuth access token and ID Token
-      window.open('common/dashboard.html', '_self');
+      // window.open('common/dashboard.html', '_self');
       const user = result.user;
       console.log(user);
       const userRef = fb_fstore.doc(db, 'users', 'currentUser');
-      fb_fstore.setDoc(userRef, { user_UID: auth.currentUser.uid }).then(() => {
+      fb_fstore.setDoc(userRef, { user_UID: result.user.uid }).then(() => {
         console.log('Added currentUser');
         console.log(auth.currentUser);
         variables.modal.classList.add('hidden');
         variables.overlay.classList.add('hidden');
         window.open('common/dashboard.html', '_self');
       });
-      const credential = OAuthProvider.credentialFromResult(result);
-      const accessToken = credential.accessToken;
-      const idToken = credential.idToken;
-      console.log(credential);
-      console.log(accessToken);
-      console.log(idToken);
+      // const credential = OAuthProvider.credentialFromResult(result);
+      // const accessToken = credential.accessToken;
+      // const idToken = credential.idToken;
+      // console.log(credential);
+      // console.log(accessToken);
+      // console.log(idToken);
     })
     .catch((error) => {
       console.log(error);

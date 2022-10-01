@@ -48,7 +48,7 @@ function getUser() {
 function updateProfile() {
   document.querySelector('.user__name').textContent = user.displayName;
   document.querySelector('.post__profile').src = user.profilePhoto;
-  loadPost();
+  // loadPost();
 }
 
 getUser();
