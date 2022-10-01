@@ -49,7 +49,7 @@ function getUser() {
 function updateProfile() {
   document.querySelector('.user__name').textContent = user.displayName;
   document.querySelector('.post__profile').src = user.profilePhoto;
-  loadPost();
+  loadMsg('iNyGQWqeFuUvz39R4US7');
 }
 
 getUser();
@@ -93,6 +93,24 @@ async function sendMessage(chat_id, sender_id, message) {
   //   addChatID(docRef.id, user.user_uid);
 }
 
+document.querySelector('.send__msg').addEventListener('click', function (e) {
+  e.preventDefault();
+  const message = document.getElementById('msg__value').value;
+  document.getElementById('msg__value').value = '';
+  sendMessage('iNyGQWqeFuUvz39R4US7', user.user_uid, message);
+});
+
+document
+  .getElementById('msg__value')
+  .addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const message = document.getElementById('msg__value').value;
+      document.getElementById('msg__value').value = '';
+      sendMessage('iNyGQWqeFuUvz39R4US7', user.user_uid, message);
+    }
+  });
+
 async function loadMsg(chat_id) {
   const q = fb_fstore.query(
     fb_fstore.collection(db, 'chats', chat_id, 'messages'),
@@ -134,4 +152,5 @@ function writeInDom(pfp, message) {
   document
     .querySelector('.messages')
     .insertAdjacentElement('beforeend', insertPost);
+  insertPost.scrollIntoView();
 }

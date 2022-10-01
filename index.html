@@ -24,44 +24,99 @@
             <a class="nav__link" href="#section--1">Features</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#section--2">Operations</a>
+            <a class="nav__link" href="#section--2">Alumni's</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#section--3">Testimonials</a>
+            <a class="nav__link" href="#section--3">Contact Us</a>
           </li>
           <li class="nav__item">
             <a class="nav__link nav__link--btn btn--show-modal" href="#"
-              >Open account</a
+              >Log In</a
             >
           </li>
         </ul>
       </nav>
     </header>
+    <section class="section" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">Features</h2>
+        <h3 class="section__header">
+          Everything you need to know about our Alumnus.
+        </h3>
+      </div>
+
+      <div class="features">
+        <img
+          src="img/wide.jpg"
+          data-src="img/digital.jpg"
+          alt=""
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <div class="features__icon">
+            
+          </div>
+          <h5 class="features__header">Wide Network</h5>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
+            sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
+            debitis ducimus.
+          </p>
+        </div>
+
+        <div class="features__feature">
+          <div class="features__icon">
+           
+          </div>
+          <h5 class="features__header">Famous Alumni</h5>
+          <p>
+            Nesciunt quos autem dolorum voluptates cum dolores dicta fuga
+            inventore ab? Nulla incidunt eius numquam sequi iste pariatur
+            quibusdam!
+          </p>
+        </div>
+        <img
+          src="img/fam_alum.jpg"
+          data-src="img/grow.jpg"
+          alt="Plant"
+          class="features__img lazy-img"
+        />
+
+        <img
+          src="img/alum.jpeg"
+          data-src="img/card.jpg"
+          alt="Credit card"
+          class="features__img lazy-img"
+        />
+        <div class="features__feature">
+          <div class="features__icon">
+            
+          <h5 class="features__header">Frequent Interaction</h5>
+          <p>
+            Quasi, fugit in cumque cupiditate reprehenderit debitis animi enim
+            eveniet consequatur odit quam quos possimus assumenda dicta fuga
+            inventore ab.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <div class="modal hidden">
       <button class="btn--close-modal">&times;</button>
       <h2 class="modal__header">
-        <div class="switch-field">
-          <input
-            type="radio"
-            id="createAccount"
-            name="switch-one"
-            value="yes"
-          />
-          <label for="createAccount">createAccount</label>
-          <input type="radio" id="logIn" name="switch-one" value="no" checked />
-          <label for="logIn">Log In</label>
-        </div>
+        <div class="switch-field">Log In</div>
       </h2>
-      <form class="modal__form">
+      <div class="modal__form">
         <label>Email</label>
         <input type="email" class="email_ID" />
         <label>Password</label>
         <input type="password" class="pass_ID" />
 
         <button class="btn btn__enter" type="submit">Enter &rarr;</button>
-        <button class="btn btn__ms">LogIn through Microsoft</button>
-      </form>
+        <button class="btn btn__ms">Log In through Microsoft</button>
+        <div class="ad_cre">Don't have an account?</div>
+        <a href="common/create_acc.html" id="cre__acc">Create Account</a>
+      </div>
     </div>
     <div class="overlay hidden"></div>
     <script src="js/index.js"></script>

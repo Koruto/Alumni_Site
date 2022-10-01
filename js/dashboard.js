@@ -50,6 +50,7 @@ function getUser() {
 
 function updateProfile() {
   document.querySelector('.user__name').textContent = user.displayName;
+  document.querySelector('.user__profile').src = user.profilePhoto;
   document.querySelector('.post__profile').src = user.profilePhoto;
   loadPost();
 }
@@ -102,6 +103,7 @@ variables.btn__post.addEventListener('click', function (e) {
   // console.log(file);
   // uploadPost(message, uid, user.profilePhoto, user.displayName, ALUMNI);
   const file = document.getElementById('image__file').files[0];
+  document.getElementById('image__file').value = '';
   console.log(file);
   uploadImage(file);
 });

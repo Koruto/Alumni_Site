@@ -7,6 +7,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #F0F8FF;
 }
 
 .main-container {
@@ -16,22 +17,22 @@ body {
 }
 
 .box {
-  width: 400px;
+  width: 450px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(1, 1, 1, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   padding: 40px;
   box-sizing: border-box;
-  box-shadow: 0px 15px 25px rgba(0, 0, 0, .5);
+  box-shadow: 0px 15px 25px rgba(255, 255, 255, 0.5);
   border-radius: 10px;
 }
 
 .box h2 {
   margin: 0 0 30px;
   padding: 0;
-  color: #fff;
+  color: black;
   text-align: center;
 }
 
@@ -44,9 +45,15 @@ body {
 }
 
 .box a {
-  color: #9a9d9e;
+  color: #54627C;
   font-size: 14px;
   text-decoration: none;
+  cursor: pointer;
+ border-radius: 10px;
+  /* background-color: #E5E5E5; */
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  width: 100%;
 }
 
 .box .input-box {
@@ -58,8 +65,8 @@ body {
   padding: 10px 0;
   font-size: 16px;
   margin-bottom: 30px;
-  color: #fff;
-  border: 1px solid #fff;
+  color: black;
+  border: 1px solid #000;
   border: none;
   border-bottom-style: solid;
   outline: none;
@@ -69,7 +76,7 @@ body {
 
 .box .input-box label {
   position: absolute;
-  color: #fff;
+  color: black;
   top: 0;
   left: 0;
   padding: 10px 0;
@@ -80,7 +87,7 @@ body {
 
 .box .input-box input:focus ~ label,
 .box .input-box input:valid ~ label{
-  top: -18px;
+  top: -24px;
   left: 0;
   color: #03a9f4;
   font-size: 12px;
@@ -91,7 +98,7 @@ body {
   border: none;
   outline: none;
   background: #03a9f4;
-  color: #fff;
+  color: black;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
@@ -109,4 +116,31 @@ body {
 
 .login-true {
   opacity: 0;
+}
+
+.file-box{
+  margin: 1rem 0;
+}
+
+.radio-box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn{
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  width: 100%;
+  font-size: medium;
+  font-weight: 500;
+  background-color: #377DFF;
+  transition: all 0.2s;
+}
+
+.log_in_box{
+  width: 100%;
+  border: none;
+  padding: 1rem;
+ margin-top: 1rem;
 }

@@ -39,7 +39,7 @@
       <div id="main" class="main-container">
         <div class="box">
           <h2>Create Account</h2>
-          <form class="createaccount__form">
+          <div class="createaccount__form">
             <div class="input-box">
               <input id="name" type="text" name="" required="" />
               <label>Name</label>
@@ -53,26 +53,30 @@
               <label>Password</label>
             </div>
             <div class="radio-box">
-              <label>Alumni?</label>
-              <label for="alumni">Yes</label>
-              <input type="radio" name="alumni" value="Yes" id="alumni" />
-              <label>No</label>
-              <input type="radio" name="alumni" value="No" id="student"/><br />
+              <label>Profession: </label>
+              <div>
+              <label for="alumni">Alumni</label>
+              <input type="radio" name="alumni" value="Yes" id="alumni" /></div>
+              <div>
+              <label for="student">Student</label>
+              <input type="radio" name="alumni" value="No" id="student"/><br /></div>
             </div>
             <div class="file-box">
-              <label for="profileImg">Profile Photo</label>
+              <label for="profileImg">Profile Photo: </label>
               <input type="file" id="profileImg" /><br /><br />
             </div>
-            <input
+            <button id="submit"
+            class="btn btn__enter"> Submit</button>
+            <!-- <input
               id="submit"
-              type="submit"
+              
               name=""
               class="btn btn__enter"
               value="Submit"
-            />
-          </form>
-          <p><a href="#">Lost your password?</a></p>
-          <p><a href="#">Register</a></p>
+            /> -->
+          </div>
+          <button class="log_in_box"><a href="../index.html" class="log_in">Log In</a></button>
+        
         </div>
       </div>
 

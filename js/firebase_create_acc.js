@@ -94,7 +94,7 @@ function createAccount(email, password, file, displayName, alumniValue) {
               })
               .catch((error) => {
                 // An error occurred
-                console.log(error);
+                alert(error);
                 // ...
               });
           });
@@ -107,14 +107,14 @@ function createAccount(email, password, file, displayName, alumniValue) {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorCode);
-      console.log(errorMessage);
+      alert(errorMessage);
 
       // ..
     });
 }
 
 variables.btn__enter.addEventListener('click', function (e) {
-  e.preventDefault();
+  // e.preventDefault();
   const email = document.getElementById('email_ID').value;
   const password = document.getElementById('pass_ID').value;
   const file = document.getElementById('profileImg').files[0];
@@ -124,7 +124,7 @@ variables.btn__enter.addEventListener('click', function (e) {
 
   if (email && password && file && displayName && (alumniValue || studentValue))
     createAccount(email, password, file, displayName, alumniValue);
-  else console.log('Missing Fields');
+  else alert('Missing Fields');
 });
 
 // fb_auth.onAuthStateChanged(auth, (user) => {

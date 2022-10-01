@@ -241,13 +241,14 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: aliceblue;
+    background-color: white;
     margin-bottom: 5px;
   }
 
   .chat__send{
     width: 100%;
-    background-color: azure;
+    background-color: white;
+    margin-top: 5px;
   }
 
   .avatar-wrapper {
@@ -284,7 +285,7 @@
   }
   
   .messages__box{
-    background-color: blanchedalmond;
+    background-color: white;
     padding: 10px;
     height: 52vh;
     overflow: auto;
@@ -304,6 +305,7 @@
 
   .message .txt_msg{
     margin: 0 2rem;
+    font-size: small;
   }
 
   #msg__value{
@@ -312,11 +314,21 @@
     width: 85%;
     border-radius: 5px;
     border: none;
+    background-color: #F6F7F8;
+  }
+  
+  #msg__value:focus-visible{
+    border: none;
+    box-shadow: none;
+    outline: none;
   }
 
   .send__msg{
-    color: blue;
-    padding: 10px;
+    color: #4385FF;
+    padding: 15px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
   }
 
  

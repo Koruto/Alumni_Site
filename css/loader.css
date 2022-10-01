@@ -56,3 +56,7 @@
     opacity: 0;
   }
   
+  .loader__heading{
+    color: #56657E;
+    font-size: x-large;
+  }

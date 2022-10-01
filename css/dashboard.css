@@ -91,8 +91,8 @@
   .resize__img{
     padding: 0;
     margin: 0%;
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 400px;
     border-radius: 10px;
   }
 
@@ -103,14 +103,27 @@
   }
 
   /* Search Bar */
-  .nav__links .search-container {
-    float: left;
+  .search-container {
+    width: 90%;
+    padding: 0 2rem;
   }
 
   .search__bar{
     height: 3.5rem;
     border-radius: 5px;
     padding: 10px;
+    /* margin: 1.5rem; */
+    padding: 1.5rem;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: #F6F7F8;
+  }
+
+  .search__bar:focus-visible{
+    border: none;
+    box-shadow: none;
+    outline: none;
   }
 
   .search__btn {
@@ -181,7 +194,7 @@
   }
 
   .section__center{
-    background-color: #E5E5E5;
+    background-color: #f3f3f3;
     border-radius: 10px;
     width: 100%;
     display: flex;
@@ -214,14 +227,13 @@
     
   }
 
-  .image-upload>input , .video-upload>input, .emoji-upload>input{
-    display: none;
-  }
+  
 
   #upload__form{
     display: flex;
     margin: 1rem 0;
     justify-content: space-around;
+    align-items: center;
   }
 
   /* .post{

@@ -41,8 +41,7 @@ function logIN(email, password) {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
+      alert(errorMessage);
     });
 }
 
@@ -62,6 +61,16 @@ function signUP(e) {
       console.log(result.additionalUserInfo.profile);
       // Get the OAuth access token and ID Token
       window.open('common/dashboard.html', '_self');
+      const user = result.user;
+      console.log(user);
+      const userRef = fb_fstore.doc(db, 'users', 'currentUser');
+      fb_fstore.setDoc(userRef, { user_UID: auth.currentUser.uid }).then(() => {
+        console.log('Added currentUser');
+        console.log(auth.currentUser);
+        variables.modal.classList.add('hidden');
+        variables.overlay.classList.add('hidden');
+        window.open('common/dashboard.html', '_self');
+      });
       const credential = OAuthProvider.credentialFromResult(result);
       const accessToken = credential.accessToken;
       const idToken = credential.idToken;
@@ -78,11 +87,11 @@ function signUP(e) {
 variables.btn__ms.addEventListener('click', signUP);
 
 variables.btn__enter.addEventListener('click', function (e) {
-  e.preventDefault();
+  // e.preventDefault();
   const email = document.querySelector('.email_ID').value;
   const password = document.querySelector('.pass_ID').value;
-
-  logIN(email, password);
+  if (email && password) logIN(email, password);
+  else alert('Missing Fields!');
 });
 
 // document.querySelector('.logOut').addEventListener('click', signOUT);
