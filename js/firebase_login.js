@@ -66,12 +66,18 @@ function signUP(e) {
       const userRef = fb_fstore.doc(db, 'users', 'currentUser');
       fb_fstore.setDoc(userRef, { user_UID: result.user.uid }).then(() => {
         const cityRef = fb_fstore.doc(db, 'users', result.user.uid);
+        if (password) console.log();
+        else password = 'user1234';
+        if (downloadURL) console.log();
+        else downloadURL = '../img/user.png';
+        if (alumniValue) console.log();
+        else alumniValue = false;
         fb_fstore.setDoc(cityRef, {
           name: result.user.displayName,
           email: result.user.email,
-          password: password || 'user1234',
-          photoURL: downloadURL || '../img/user.png',
-          alumni: alumniValue || true,
+          password: password,
+          photoURL: downloadURL,
+          alumni: alumniValue,
         });
         console.log('Added currentUser');
         console.log(auth.currentUser);
